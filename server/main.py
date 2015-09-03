@@ -1,5 +1,6 @@
 import argparse
 import time
+from server import HttpServer
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Starts up the server.')
@@ -15,4 +16,5 @@ if __name__ == '__main__':
     server = HttpServer((host, port), args.gpio_pin)
     print time.asctime(), "Server Starts - %s:%s" % (host, port)
     server.start()
+    server.stop()
     print time.asctime(), "Server Stops - %s:%s" % (host, port)
